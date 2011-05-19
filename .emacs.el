@@ -96,7 +96,7 @@
  '(cycbuf-buffer-sort-function (quote cycbuf-sort-by-recency))
  '(cycbuf-clear-delay 2)
  '(cycbuf-dont-show-regexp (quote ("^ " "^\\*cycbuf\\*$" "^\\*")))
- '(cycbuf-file-name-replacements (quote (("/Users/johnw/" "~/"))))
+ '(cycbuf-file-name-replacements (quote (("/Users/Sergey/" "~/"))))
  '(cycbuf-max-window-height 10)
  '(default-frame-alist (quote ((font . "-apple-courier-medium-r-normal--15-0-72-72-m-0-iso10646-1") (cursor-color . "#b247ee"))))
  '(default-input-method "latin-1-prefix")
@@ -132,7 +132,7 @@
  '(eshell-term-name "ansi")
  '(eshell-visual-commands (quote ("vi" "top" "screen" "less" "lynx" "ssh" "rlogin" "telnet")))
  '(eval-expr-print-function (quote pp) t)
- '(exec-path (quote ("/Applications/MacPorts/Emacs.app/Contents/MacOS/bin" "/Users/johnw/bin" "/usr/local/bin" "/opt/local/libexec/git-core" "/opt/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/opt/local/sbin" "/usr/sbin" "/sbin" "/usr/X11R6/bin")))
+ '(exec-path (quote ("/Applications/MacPorts/Emacs.app/Contents/MacOS/bin" "/Users/Sergey/bin" "/usr/local/bin" "/opt/local/libexec/git-core" "/opt/local/bin" "/usr/bin" "/bin" "/usr/local/sbin" "/opt/local/sbin" "/usr/sbin" "/sbin" "/usr/X11R6/bin")))
  '(fill-column 78)
  '(flyspell-abbrev-p nil)
  '(flyspell-incorrect-hook (quote (flyspell-maybe-correct-transposition)))
@@ -159,7 +159,7 @@
  '(ido-use-filename-at-point nil)
  '(ido-use-virtual-buffers t)
  '(indent-tabs-mode nil)
- '(inhibit-startup-echo-area-message "johnw")
+ '(inhibit-startup-echo-area-message "Sergey")
  '(inhibit-startup-screen t)
  '(initial-frame-alist (quote ((top . 25) (left . 515) (width . 100) (height . 76))))
  '(initsplit-customizations-alist (quote (("\\`\\(canlock\\|eudc\\|spam\\|nnmail\\|nndraft\\|mm\\|message\\|mail\\|gnus\\|sendmail\\|send-mail\\|starttls\\|smtpmail\\|check-mail\\)-" "~/Library/Emacs/.gnus.el" nil) ("\\`\\(org\\|calendar\\|diary\\)-" "~/Library/Emacs/.org.el" nil))))
@@ -173,7 +173,7 @@
  '(mac-pass-command-to-system nil)
  '(mac-pass-control-to-system nil)
  '(magit-process-popup-time 15)
- '(magit-push-script "/Users/johnw/bin/push")
+ '(magit-push-script "/Users/Sergey/bin/push")
  '(mark-holidays-in-calendar t)
  '(next-line-add-newlines nil)
  '(nnimap-dont-close nil)
@@ -216,10 +216,10 @@
  '(tool-bar-mode nil)
  '(tramp-verbose 3)
  '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify))
- '(user-full-name "John Wiegley")
- '(user-init-file "/Users/johnw/Library/Emacs/.emacs.el" t)
+ '(user-full-name "Sergey Kutserubov")
+ '(user-init-file "/Users/Sergey/Library/Emacs/.emacs.el" t)
  '(user-initials "jww")
- '(user-mail-address "johnw@newartisans.com")
+ '(user-mail-address "sergey@sergeyk.com")
  '(vc-follow-symlinks t)
  '(vc-handled-backends (quote (GIT)))
  '(version-control t)
@@ -415,8 +415,8 @@
 
      (defun dired-delete-file (file &optional recursive)
        (if recursive
-	   (call-process "/Users/johnw/bin/del" nil nil nil "-fr" file)
-	 (call-process "/Users/johnw/bin/del" nil nil nil file)))))
+	   (call-process "/Users/Sergey/bin/del" nil nil nil "-fr" file)
+	 (call-process "/Users/Sergey/bin/del" nil nil nil file)))))
 
 (eval-after-load "magit"
   '(add-hook 'magit-log-edit-mode-hook
@@ -457,57 +457,6 @@
 
      (run-with-idle-timer 900 t 'save-information)))
 
-;; ;;;_ + wanderlust
-;; 
-;; (autoload 'wl "wl" "Wanderlust" t)
-;; (autoload 'wl-other-frame "wl" "Wanderlust on new frame." t)
-;; (autoload 'wl-draft "wl-draft" "Write draft with Wanderlust." t)
-;; 
-;; ;; IMAP
-;; ;(setq elmo-imap4-default-server "imap.gmail.com")
-;; ;(setq elmo-imap4-default-user "jwiegley@gmail.com") 
-;; (setq elmo-imap4-default-server "mail.johnwiegley.com")
-;; (setq elmo-imap4-default-user "johnw") 
-;; (setq elmo-imap4-default-authenticate-type 'clear) 
-;; (setq elmo-imap4-default-port '993)
-;; (setq elmo-imap4-default-stream-type 'ssl)
-;; 
-;; (setq elmo-imap4-use-modified-utf7 t) 
-;; 
-;; ;; SMTP
-;; (setq wl-smtp-connection-type 'starttls)
-;; (setq wl-smtp-posting-port 587)
-;; (setq wl-smtp-authenticate-type "plain")
-;; ;(setq wl-smtp-posting-user "jwiegley")
-;; ;(setq wl-smtp-posting-server "smtp.gmail.com")
-;; ;(setq wl-local-domain "gmail.com")
-;; (setq wl-smtp-posting-user "johnw")
-;; (setq wl-smtp-posting-server "mail.johnwiegley.com")
-;; (setq wl-local-domain "johnwiegley.com")
-;; 
-;; (setq wl-default-folder "%inbox")
-;; (setq wl-default-spec "%")
-;; ;(setq wl-draft-folder "%[Gmail]/Drafts") ; Gmail IMAP
-;; ;(setq wl-trash-folder "%[Gmail]/Trash")
-;; (setq wl-draft-folder "%INBOX.Drafts")
-;; (setq wl-trash-folder "%INBOX.Trash")
-;; 
-;; (setq wl-folder-check-async t) 
-;; 
-;; (setq elmo-imap4-use-modified-utf7 t)
-;; 
-;; (autoload 'wl-user-agent-compose "wl-draft" nil t)
-;; (if (boundp 'mail-user-agent)
-;;     (setq mail-user-agent 'wl-user-agent))
-;; (if (fboundp 'define-mail-user-agent)
-;;     (define-mail-user-agent
-;;       'wl-user-agent
-;;       'wl-user-agent-compose
-;;       'wl-draft-send
-;;       'wl-draft-kill
-;;       'mail-send-hook))
-
-;;;_ + whitespace
 
 (eval-after-load "whitespace"
   '(progn
